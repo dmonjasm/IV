@@ -11,3 +11,5 @@ La idea es que el usuario suba el archivo y el formato de este se adapte según 
 
 ## Lógica de negocio
 La lógica de negocio consiste en subir el archivo, detectar cual son los formatos aceptados, y si alguno de los archivos no coincide con los mismos se realizar la transformación del mismo a los aceptados. En caso de que se suba un archivo cuyo formato no es contemplado (por ejemplo, se sube una imagen y en la entrega no se contempla la entrega de imágenes) se comunicará al usuario la imposibilidad.
+
+## Configuración git
