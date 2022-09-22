@@ -8,3 +8,18 @@ Teniendo en cuenta nuestro automóvil y el precio actual de la gasolina, conocer
 
 ## Configuración git
 Para acceder a la configuración pinchar este [enlace](https://github.com/dmonjasm/IV/blob/Objetivo-0/docs/config.md)
+
+
+## Lista de comprobación
+* [x] ¿Se trata de un problema real del que se tenga conocimiento personal?
+Sí, durante 4 años he estado trabajando en Madrid y he tenido que realizar la ruta Madrid-Segovia diariamente. En esta ruta hay un peaje en el cual, en función del periodo y del precio que tenga la gasolina dicho día, sale más rentable evitarlo que cogerlo.
+
+* [x] ¿Se trata de un problema que para solucionar requiera el despliegue de una aplicación en la nube?
+Sería necesario recoger los precios de los distintos peajes repartidos por España, así como los precios que tiene cada uno para los distintos tipos de vehículos y periodos horarios del día.
+
+* [x] ¿La solución requiere una cierta cantidad de lógica de negocio, en vez
+solucionarse sólo almacenando y buscando?
+Sí, va a ser necesario hacer Web Scraping y probar varias combinaciones de rutas, así como hacer una cierta heurística para elegir una ruta teniendo en cuenta su precio y tiempo total.
+
+* [x] ¿Se ha incluído la configuración del repositorio y se ha enlazado desde el README?
+Sí, todo queda enlazado en el apartado configuración git del README.
