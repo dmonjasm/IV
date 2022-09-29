@@ -8,9 +8,6 @@ Desde que descubrió RouteCheck, Alfonso comprueba todas las mañanas cuál es l
 de dinero posible.
 
 ## Marina Díaz Díaz
-Marina es de Galicia y veranea en Valencia. Cada vez que organiza sus vacaciones tiene que considerar el dinero que se va a gastar en peajes, debido a la larga distancia
-entre el origen y el destino, así como considerar cuanto tiempo va a tardar en realizar el viaje. Generalmente Marina solía tomar la ruta más rápida, pero esto implica
-un enorme gasto en peajes, respecto a la ruta más rápida.
+Marina trabaja en una empresa de transportes. Como parte de su trabajo está asignar un precio al billete en el caso de los autobuses, o asignar un prespuesto para el transporte de una mercancía en el caso de los camiones. Debido a las muchas combinaciones de rutas posibles es muy difícil hacer todas estas cuentas una por una.
 
-Gracias a RouteCheck, Marina puede introducir su ruta previamente y así conocer cual es la mejor combinación para ahorrarse dinero sin afectar demasiado al tiempo
-invertido en el viaje.
+Marina utiliza RouteCheck, para asignar los precios más rentables para la empresa y así generar el máximo beneficio posible para la misma.
