@@ -28,4 +28,4 @@ Sofía tiene que realizar un viaje largo, pero tiene un límite muy ajustado de 
 e intentar aproximar el dinero que va a invertir en el viaje antes de realizarlo para ver si este se ajusta a su presupuesto, y si el tiempo que va a tardar en realizar el viaje
 es factible.
 
-Desde que usa RouteCheck, Sofía ya no tiene que invertir tiempo en esto, sino que introduce la información necesaria y elige la ruta que mejor se ajusta a su límite de presupuesto.
+Desde que usa RouteCheck, Sofía ya no tiene que invertir tiempo en esto, sino que introduce la información necesaria y elige la ruta que mejor se ajusta a su límite de presupuesto, si es que dicha ruta existe.
