@@ -10,3 +10,5 @@
 - [M5] [Librería para recoger los datos del peaje de fuentes externas](https://github.com/dmonjasm/RouteCheck/milestone/6)
 
 - [M6] [Función/Método que genere los datos de duración y precio de las distintas rutas](https://github.com/dmonjasm/RouteCheck/milestone/7)
+
+- [M7] [Estructura de datos que contenga la lista de rutas con sus correspondientes datos](https://github.com/dmonjasm/RouteCheck/milestone/8)
