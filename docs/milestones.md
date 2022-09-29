@@ -1,14 +1,13 @@
 # Milestones
-- [M1] [Un módulo que defina la estructura de datos que va a almacenar RouteCheck, sin implementación](https://github.com/dmonjasm/RouteCheck/milestone/2)
+- [M0] [Estructuras de datos que modelen las distintas entidades de RouteCheck]([https://github.com/dmonjasm/RouteCheck/milestone/2](https://github.com/dmonjasm/RouteCheck/milestone/2))
+  
+  Se requieren estructuras de datos que modelen las distintas entidades de RouteCheck y sus características:
 
-- [M2] [Estructura de datos que almacena la información de un vehículo](https://github.com/dmonjasm/RouteCheck/milestone/3)
+  - Vehículo
+  - Rutas
 
-- [M3] [Estructura de datos para representar las rutas](https://github.com/dmonjasm/RouteCheck/milestone/4)
+- [M1] [Función que obtenga las rutas posibles](https://github.com/dmonjasm/RouteCheck/milestone/3)
 
-- [M4] [Estructura de datos para representar los peajes](https://github.com/dmonjasm/RouteCheck/milestone/5)
+- [M2] [Función que recoja los datos de los peajes.](https://github.com/dmonjasm/RouteCheck/milestone/9)
 
-- [M5] [Librería para recoger los datos del peaje de fuentes externas](https://github.com/dmonjasm/RouteCheck/milestone/6)
-
-- [M6] [Función/Método que genere los datos de duración y precio de las distintas rutas](https://github.com/dmonjasm/RouteCheck/milestone/7)
-
-- [M7] [Estructura de datos que contenga la lista de rutas con sus correspondientes datos](https://github.com/dmonjasm/RouteCheck/milestone/8)
+- [M3] [Función que calcule una estimación del precio para la ruta.](https://github.com/dmonjasm/RouteCheck/milestone/10)
