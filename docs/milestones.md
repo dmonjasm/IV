@@ -1,19 +1,16 @@
 # Milestones
-- [M0] [Estructuras de datos que modelen las distintas entidades de RouteCheck.](https://github.com/dmonjasm/RouteCheck/milestone/2)
+- [M0] [Clases/Modulos que modelen las distintas entidades de RouteCheck.](https://github.com/dmonjasm/RouteCheck/milestone/2)
   
-  Se requieren estructuras de datos que modelen las distintas entidades de RouteCheck y sus características:
+  Se requieren clases/modulos que modelen las distintas entidades de RouteCheck y sus características.
 
-  - Vehículo
-  - Rutas
+- [M1] [API para modificar las clases/modulos de [M0]](https://github.com/dmonjasm/RouteCheck/milestone/3)
 
-- [M1] [Función que obtenga las rutas posibles.](https://github.com/dmonjasm/RouteCheck/milestone/3)
+  API que permita modificar las clases/modulos que modelan las entidades de RouteCheck
 
-  Función que recoja de fuentes externas distintas rutas para un determinado origen y destino.
+- [M2] [Código de clase/modulo para calcular las rutas.](https://github.com/dmonjasm/RouteCheck/milestone/9)
 
-- [M2] [Función que recoja los datos de los peajes.](https://github.com/dmonjasm/RouteCheck/milestone/9)
+  Código de clase/módulo que nos permita calcular distintas rutas para un mismo origen y destino.
+  
+- [M3] [Código de clase/modulo para filtrar y extraer información de un .pdf](https://github.com/dmonjasm/RouteCheck/milestone/10)
 
-  Función que obtenga de la página del ministerio de transporte los precios de los peajes para una determinada ruta.
-
-- [M3] [Función que calcule una estimación del precio para la ruta.](https://github.com/dmonjasm/RouteCheck/milestone/10)
-
-  Función que a partir de los datos que disponga en la estructura de datos definida en M0 calcule una estimación del coste del viaje.
+  Código de clase/módulo que nos permita extraer información de un .pdf y filtrarla según convenga.
