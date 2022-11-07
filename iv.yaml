@@ -1,2 +1,2 @@
-lenguaje: Ruby
-entidad: src/clase.rb
+lenguaje: go
+entidad: app/routecheck/Ruta.go
