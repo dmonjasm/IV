@@ -1,2 +1,2 @@
 lenguaje: go
-entidad: app/routecheck/Ruta.go
+entidad: internal/Ruta.go
