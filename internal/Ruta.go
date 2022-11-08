@@ -1,4 +1,4 @@
-package routecheck
+package internal
 import "errors"
 
 type Ruta struct{
@@ -7,12 +7,12 @@ type Ruta struct{
 	puntuacion float32
 }
 
-func NewRuta(tramo Tramo, ruta *Ruta, puntuacion float32) (*Ruta, error){
+func NewRuta(tramo *Tramo, ruta *Ruta, puntuacion float32) (*Ruta, error){
 	err := PuntuacionError(puntuacion)
 	if err != nil{
 		return nil, err
 	}
-	return &Ruta{tramo, ruta, puntuacion}, nil
+	return &Ruta{*tramo, ruta, puntuacion}, nil
 }
 
 func PuntuacionError(puntuacion float32) error{

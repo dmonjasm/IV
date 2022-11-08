@@ -1,4 +1,4 @@
-package routecheck
+package internal
 import "errors"
 
 type Tramo struct{
@@ -9,12 +9,12 @@ type Tramo struct{
     limite uint8
 }
 
-func NewTramo(inicio Posicion, fin Posicion, peaje Peaje, limite uint8)(*Tramo, error){
+func NewTramo(inicio *Posicion, fin *Posicion, peaje *Peaje, limite uint8)(*Tramo, error){
 	err := LimiteError(limite)
 	if err != nil{
 		return nil, err
 	}
-    return &Tramo{inicio, fin, 0, peaje, limite}, nil	//implementar el calculo entre dos coordenadas para la distancia
+    return &Tramo{*inicio, *fin, 0, *peaje, limite}, nil	//implementar el calculo entre dos coordenadas para la distancia
 }
 
 func LimiteError(limite uint8) error{

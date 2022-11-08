@@ -1,4 +1,4 @@
-package routecheck
+package internal
 import "errors"
 
 type Peso uint8
