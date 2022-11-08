@@ -12,14 +12,17 @@ func main() {
 	}else{
 		fmt.Println("Coche: ", *coche)
 	}
+
 	inicio, err := internal.NewPosicion(23, -100)
 	if err != nil{
 		fmt.Println(err)
 	}
+	
 	fin, err := internal.NewPosicion(-90, 150)
 	if err != nil{
 		fmt.Println(err)
 	}
+
 	peaje, err := internal.NewPeaje(map[internal.Peso]float32{internal.Ligero: 2.3, internal.Pesado: 5.1})
 	if err != nil{
 		fmt.Println(err)
@@ -29,6 +32,7 @@ func main() {
 	if err != nil{
 		fmt.Println(err)
 	}
+
 	ruta, err := internal.NewRuta(tramo, nil, 200)
 	if err != nil{
 		fmt.Println(err)
