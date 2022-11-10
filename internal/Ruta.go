@@ -4,7 +4,7 @@ import "errors"
 type Ruta struct{
 	tramo Tramo
 	ruta *Ruta
-	puntuacion float32
+	precio float32
 }
 
 func NewRuta(tramo *Tramo, ruta *Ruta, precio float32) (*Ruta, error){
