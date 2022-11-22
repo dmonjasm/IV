@@ -1,6 +1,8 @@
 package internal
 import "errors"
 
+type ConsumoVehiculo float32
+
 type Ruta struct{
 	precio float32
 	tramos [] Tramo
