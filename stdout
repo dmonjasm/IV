@@ -1,0 +1,47 @@
+package internal
+
+import "errors"
+
+type ConsumoVehiculo float32
+type Peaje float32
+
+type Ruta struct {
+	tramos []Tramo
+	peaje  Peaje
+}
+
+func NewRuta(tramos []Tramo, peaje Peaje) (*Ruta, error) {
+	if len(tramos) == 0 {
+		return nil, errors.New("Una ruta debe contener mínimo un tramo.")
+	}
+	if peaje < 0 {
+		return nil, errors.New("Un peaje no puede ser negativo.")
+	}
+	return &Ruta{tramos, peaje}, nil
+}
+package internal
+
+import "errors"
+
+type Tramo struct {
+	distancia       uint
+	velocidadLimite uint8
+}
+
+func NewTramo(distancia uint, velocidadLimite uint8) (*Tramo, error) {
+	err := NewTramoError(distancia, velocidadLimite)
+	if err != nil {
+		return nil, err
+	}
+	return &Tramo{distancia, velocidadLimite}, nil
+}
+
+func NewTramoError(distancia uint, velocidadLimite uint8) error {
+	if velocidadLimite < 10 || velocidadLimite > 120 {
+		return errors.New("El límite de velocidad no es válido.")
+	}
+	if distancia <= 0 {
+		return errors.New("La distancia no puede ser negativa.")
+	}
+	return nil
+}

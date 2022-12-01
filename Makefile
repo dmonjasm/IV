@@ -11,18 +11,27 @@ RESET  := $(shell tput -Txterm sgr0)
 
 all: help
 
+## Check:
+check:
+	@echo "Checking syntax..."
+	gofmt -e ./internal/* > /dev/null
 ## Build:
 build: ## Build your project and put the output binary in out/bin/
-	echo "Compilando..."
+	@echo "Compilando..."
 	mkdir ./bin
 	$(GOCMD) build -o ./bin/$(BINARY_NAME) ./internal/
+
+installdeps: ## Installing dependencies
+	@echo "Installing dependencies..."
+	go get ./... ## Así obtenemos las dependencias de todos los archivos que cuelgan de root
 
 clean: ## Remove build related file
 	rm -fr ./bin
 
 ## Test:
 test: ## Run the tests of the project
-	echo "Testing..."
+	@echo "Testing..."
+	## Todavía no se ha implementado nada para test
 
 ## Help:
 help: ## Show this help.
