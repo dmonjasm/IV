@@ -3,4 +3,4 @@ entidad: internal/ruta.go
 
 automatizar:
   fichero: Makefile
-  orden: make check
+  orden: make
