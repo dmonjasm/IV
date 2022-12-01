@@ -23,3 +23,6 @@ Sí, va a ser necesario hacer Web Scraping y probar varias combinaciones de ruta
 
 * [x] ¿Se ha incluído la configuración del repositorio y se ha enlazado desde el README?
 Sí, todo queda enlazado en el apartado configuración git del README.
+
+## Órdenes Makefile
+

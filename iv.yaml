@@ -1,5 +1,6 @@
 lenguaje: go
 entidad: internal/ruta.go
 
-fichero: Makefile
-orden: make check
+automatizar:
+  fichero: Makefile
+  orden: make check
