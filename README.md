@@ -25,4 +25,12 @@ Sí, va a ser necesario hacer Web Scraping y probar varias combinaciones de ruta
 Sí, todo queda enlazado en el apartado configuración git del README.
 
 ## Órdenes Makefile
+En este apartado se incluyen las distintas órdenes que acepta el Makefile del proyecto:
++ make check: comprueba la sintaxis de todos los archivos y devuelve los errores.
++ make build: compila todos los archivos del proyecto actual. Almacena los compilados en ./bin.
++ make installdeps: instala las dependencias de todos los archivos go que cuelgan del directorio raíz.
++ make clean: elimina los archivos compilados almacenados en ./bin.
++ make test: no implementado todavía. En un futuro ejecutará los tests.
++ make help: muestra las posible órdenes aceptadas por el make.
++ make: ejecuta check, build y clean.
 

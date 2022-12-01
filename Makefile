@@ -9,7 +9,7 @@ WHITE  := $(shell tput -Txterm setaf 7)
 CYAN   := $(shell tput -Txterm setaf 6)
 RESET  := $(shell tput -Txterm sgr0)
 
-all: help
+all: check build clean
 
 ## Check:
 check:
