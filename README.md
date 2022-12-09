@@ -47,6 +47,9 @@ Por otro lado, en los requisitos del objetivo 3 nos pide que incluyamos una clav
 
 Creo que a pesar de combinar con Make sigue siendo mejor opción, ya que buscando comparaciones entre Make y Task, no he encontrado una clara ventaja para elegir uno sobre otro. Luego la deuda técnica y los estándares es lo que me ha decantado por Make+GO.
 
+## Elección Gestor de Dependencias
+Como consecuencia de la elección del gestor de tareas, el gestor de dependencias será el implícito de GO, que también trae funciones para la instalación y compilación de dependencias, así como para el mantenimiento del módulo.
+
 ## Órdenes Makefile
 En este apartado se incluyen las distintas órdenes que acepta el Makefile del proyecto:
 + make check: comprueba la sintaxis de todos los archivos y devuelve los errores.
