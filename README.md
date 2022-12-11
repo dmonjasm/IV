@@ -58,7 +58,7 @@ Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he d
 ## Elección Gestor de Dependencias
 La gestión de dependencias en GO se hace por medio la herramienta de línea de órdenes de GO. Es más, buscando gestores de dependencias para GO he visto que están obsoletos, y que los repositorios de los mismo han sido archivados.
 
-Luego realmente no se requiere de un gestor de dependencias concreto. En este caso, como hemos usado Make como gestor de tareas simplemente añadimos al Taskfile las claves necesarias para la gestión de dependencias.
+Luego realmente no se requiere de un gestor de dependencias concreto. En este caso, como hemos usado Task como gestor de tareas simplemente añadimos al Taskfile las claves necesarias para la gestión de dependencias.
 
 ## Órdenes Taskfile
 En este apartado se incluyen las distintas órdenes que acepta el Taskfile del proyecto:
