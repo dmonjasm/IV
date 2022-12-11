@@ -28,6 +28,7 @@ Sí, todo queda enlazado en el apartado configuración git del README.
 Para la elección del gestor de tareas se van a tener en cuenta:
 + Deuda técnica. En particular vamos a buscar que la herramienta reciba mantenimiento con asiduidad.
 + Instalación. Si la requiere, y en caso de así ser, cómo de compleja es la misma.
++ Funcionalidades.
 
 
 Voy a utilizar la información del repositorio [Awesome Go](https://github.com/avelino/awesome-go).
@@ -39,16 +40,20 @@ Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar
     
     + Requiere la instalación de código así como añadir el mismo a las variables de entorno del sistema.
 
+    + Task incluye funcionalides que permiten modificar la forma de ejecutar las tareas, el directorio de ejecución, el formato de la salida, entre otras muchas posibilidades.
+
 + La última opción considerada es [Make](https://www.gnu.org/software/make/). También requiere la instalación de código externo, aunque suele venir como parte de muchas distribuciones Linux.
 
     + Make recibe mantenimiento asiduamente, como se puede apreciar en su documentación.
 
     + La mayoría de distribuciones Linux traen este gestor de tareas instalado, aunque podría ser necesaria la instalación del mismo.
 
+    + Make incluye funcionalidades que permiten modificar sobre que archiovs se ejecutan las tareas, la forma en que se ejecutan, el formato de salida, el archivo que se va a usar como Makefile (por defecto se usa Makefile), etc.
+
 
 Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso años) sin recibir soporte, luego los he descartado automáticamente.
 
-Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Make. Buscando comparaciones entre Make y Task, no he encontrado una clara ventaja para elegir uno sobre otro, la elección se debe principalmente a que Task lleva pocos años en desarrollo, lo que hace que las actualizaciones y cambios del mismo son muy frecuentes, y la documentación de los errores es bastantes escasa.  Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
+Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Make. Buscando comparaciones entre Make y Task, no he encontrado una clara ventaja para elegir uno sobre otro, la elección de Make se debe a que, aunque las dos son buenas opciones, Make tiene todas las funcionalidades que incluy Task y inlcuye algunas más que nos permiten tener en cuenta la ocupación actual, como por ejemplo -l.  Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
 
 En los requisitos del objetivo 3 nos pide que incluyamos una clave fichero en el iv.yaml que apuntará al archivo que se usará para ejecutar las tareas. En este caso el fichero va a ser el Makefile
 
