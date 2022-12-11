@@ -53,7 +53,7 @@ Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar
 
 Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso años) sin recibir soporte, luego los he descartado automáticamente.
 
-Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Make. Buscando comparaciones entre Make y Task, no he encontrado una clara ventaja para elegir uno sobre otro, la elección de Make se debe a que, aunque las dos son buenas opciones, Make tiene todas las funcionalidades que incluy Task y inlcuye algunas más que nos permiten tener en cuenta la ocupación actual, como por ejemplo -l.  Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
+Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Make. Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
 
 ## Elección Gestor de Dependencias
 La gestión de dependencias en GO se hace por medio la herramienta de línea de órdenes de GO. Es más, buscando gestores de dependencias para GO he visto que están obsoletos, y que los repositorios de los mismo han sido archivados.
