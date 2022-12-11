@@ -2,5 +2,5 @@ lenguaje: go
 entidad: internal/ruta.go
 
 automatizar:
-  fichero: Taskfile
+  fichero: Taskfile.yaml
   orden: go-task
