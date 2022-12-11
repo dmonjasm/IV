@@ -1,0 +1,43 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    desc: Checks syntax, builds the source code and deletes the binary objects
+    deps: [check, build, clean]
+    silent: true
+
+  build:
+    desc: Build the source code
+    deps: [clean]
+    cmds:
+      - echo "Compilando..."
+      - mkdir ./bin
+      - go build -o ./bin/internal ./internal/
+    silent: true
+
+  check:
+    desc: Checks the syntax of the entity
+    cmds:
+      - echo "Checking syntax..."
+      - gofmt -e ./internal/* > /dev/null
+    silent: true
+
+  installdeps:
+    desc: Compiles packages and install dependencies
+    cmds:
+      - echo "Installing dependencies..."
+      - go get ./...
+    silent: true
+
+  test:
+    desc: Tests
+    cmds:
+      - echo "Testing..."
+    
+  clean:
+    desc: Deletes binary objects
+    cmds:
+      - rm -fr ./bin
+    silent: true
