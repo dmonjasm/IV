@@ -53,11 +53,9 @@ Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he d
 En los requisitos del objetivo 3 nos pide que incluyamos una clave fichero en el iv.yaml que apuntará al archivo que se usará para ejecutar las tareas. En este caso el fichero va a ser el Makefile
 
 ## Elección Gestor de Dependencias
-La gestión de dependencias en GO se hace por medio de un sistema descentralizado. El usuario simplemente tiene que localizar un paquete, para lo que GO provee un [motor de búsqueda](pkg.go.dev). Y una vez localizado el paquete simpelmente se debe realizar la importación del paquete.
+La gestión de dependencias en GO se hace por medio la herramienta de línea de órdenes de GO. Es más, buscando gestores de dependencias para GO he visto que están obsoletos, y que los repositorios de los mismo han sido archivados.
 
-En el archivo go.mod se mantiene una lista de las dependencias actuales del módulo. Cuando se añade una dependencia se crea un go.sum que contiene los checksums de los módulos en los que se depende, y que son utilizados para verificar la integridad de los módulos descargados. Las herramientas de GO permiten comandos para el mantenimiento e instalación de dependencias.
-
-Teniendo en cuenta todo lo anterior usaré también Make como gestor de dependencias, añadiendo las claves que sean necesarias para la gestión de las mismas.
+Luego realmente no se requiere de un gestor de dependencias concreto. En este caso, como hemos usado Make como gestor de tareas simplemente añadimos al Makefile las claves necesarias para la gestión de dependencias.
 
 ## Órdenes Makefile
 En este apartado se incluyen las distintas órdenes que acepta el Makefile del proyecto:
