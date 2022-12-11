@@ -34,26 +34,21 @@ Voy a utilizar la información del repositorio [Awesome Go](https://github.com/a
 
 Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar Task y make:
 
-+ Una opción sería [Task](https://github.com/go-task/task). El principal problema de este es que requiere la instalación de código externo, aunque esta es bastante simple.
-
-    + Este al igual que el anterior cumple el requisito de mantenimiento, pues tiene actualizaciones regulares. Si bien cumple el requisito de mantenimiento creo que son mejores el *task runner* implícito o Make, pues si bien actualmente Task recibe soporte, en un futuro no se sabe si seguirá recibiéndolo, mientras que las otras dos opciones debido a que una se actualiza con el propio lenguaje y la otra es tremendamente popular, garantizan su soporte durante los próximos años.
-
-    + Por otro lado, este *task manager* no es estándar, surge como alternativa más simple que Make. Este utiliza archivos .yml o .yaml para la automatización de tareas.
-
-    + Respecto a las funcionalidades ofrecerá todas aquellas que se implementen en el archivo *Taskfile*. Esto incluye todas las funcionalidades del anterior.
++ Una opción sería [Task](https://github.com/go-task/task). 
+    + Task recibe mantenimiento asiduamente, lo cual se puede apreciar en la página de github.
+    
+    + Requiere la instalación de código así como añadir el mismo a las variables de entorno del sistema.
 
 + La última opción considerada es [Make](https://www.gnu.org/software/make/). También requiere la instalación de código externo, aunque suele venir como parte de muchas distribuciones Linux.
 
-    + Make sigue recibiendo soporte, en concreto la última actualización es del 31 de Octubre de 2022, luego cumple el requisito del mantenimiento. Además a diferencia de Task, debido a la gran popularidad de Make es probable que reciba soporte durante muchos más años.
+    + Make recibe mantenimiento asiduamente, como se puede apreciar en su documentación.
 
-    + Este *task runner* no es el estándar de GO, aunque es ampliamente utilizado.
-
-    + En cuanto a funcionalidades, ocurre como con Task, tendrá todas las funcionalidades que tenga el archivo Makefile implementadas. De nuevo, esto incluye todas las funcionalidades del *task runner* implícito de GO.
+    + La mayoría de distribuciones Linux traen este gestor de tareas instalado, aunque podría ser necesaria la instalación del mismo.
 
 
 Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso años) sin recibir soporte, luego los he descartado automáticamente.
 
-Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Make. Buscando comparaciones entre Make y Task, no he encontrado una clara ventaja para elegir uno sobre otro, la elección se debe principalmente a que Task lleva pocos años en desarrollo, lo que hace que las actualizaciones y cambios del mismo son muy frecuentes, y la documentación de los errores es bastantes escasa.  Make permite la utilización de todas las funcionalidades del *task runner* implícito de GO y muchas más, siempre que se implementen en el Makefile, y recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, si bien recibe soporte, las actualizaciones no hacen modificaciones mayores.
+Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Make. Buscando comparaciones entre Make y Task, no he encontrado una clara ventaja para elegir uno sobre otro, la elección se debe principalmente a que Task lleva pocos años en desarrollo, lo que hace que las actualizaciones y cambios del mismo son muy frecuentes, y la documentación de los errores es bastantes escasa.  Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
 
 En los requisitos del objetivo 3 nos pide que incluyamos una clave fichero en el iv.yaml que apuntará al archivo que se usará para ejecutar las tareas. En este caso el fichero va a ser el Makefile
 
