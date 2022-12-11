@@ -27,8 +27,6 @@ Sí, todo queda enlazado en el apartado configuración git del README.
 ## Elección Gestor de Tareas
 Para la elección del gestor de tareas se van a tener en cuenta:
 + Deuda técnica. En particular vamos a buscar que la herramienta reciba mantenimiento con asiduidad.
-+ Instalación. Si la requiere, y en caso de así ser, cómo de compleja es la misma.
-+ Funcionalidades.
 
 
 Voy a utilizar la información del repositorio [Awesome Go](https://github.com/avelino/awesome-go).
