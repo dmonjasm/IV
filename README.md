@@ -27,23 +27,33 @@ Sí, todo queda enlazado en el apartado configuración git del README.
 ## Elección Gestor de Tareas
 Para la elección del gestor de tareas se van a tener en cuenta:
 + Deuda técnica. En particular vamos a buscar que la herramienta reciba mantenimiento con asiduidad.
-
++ Prestaciones. En particular, el tiempo que toma la ejecución de las tareas
++ Dificultad de la sintaxis.
 
 Voy a utilizar la información del repositorio [Awesome Go](https://github.com/avelino/awesome-go).
 
 Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar Task y make:
 
-+ Una opción sería [Task](https://github.com/go-task/task). 
++ Una opción sería [Task](https://github.com/go-task/task).
+
     + Task recibe mantenimiento asiduamente, lo cual se puede apreciar en la página de github.
 
-+ La última opción considerada es [Make](https://www.gnu.org/software/make/). También requiere la instalación de código externo, aunque suele venir como parte de muchas distribuciones Linux.
+    + Task es más rápido en la ejecución de tareas que Make, para ello se han ejecutado tareas de compilación e instalación de dependencias y se han demostrado que los tiempos obtenidos por Task han sido mejores que los obtenidos por Make.
+
+    + La sintaxis de los Taskfile, utilizados por Task, son ficheros .yml o .yaml, y estos proporcionan una sintaxis más simple que la necesitada por los Makefile, en particular, para proyectos grandes.
+
++ La última opción considerada es [Make](https://www.gnu.org/software/make/).
 
     + Make recibe mantenimiento asiduamente, como se puede apreciar en su documentación.
+
+    + Make es más lento en la ejecución de tareas que Task.
+
+    + La sintaxis de los Makefile se vuelve compleja de entender cuando se tratan de proyectos grandes.
 
 
 Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso años) sin recibir soporte, luego los he descartado automáticamente.
 
-Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Make. Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
+Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Task. Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
 
 ## Elección Gestor de Dependencias
 La gestión de dependencias en GO se hace por medio la herramienta de línea de órdenes de GO. Es más, buscando gestores de dependencias para GO he visto que están obsoletos, y que los repositorios de los mismo han sido archivados.
