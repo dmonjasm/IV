@@ -35,18 +35,10 @@ Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar
 
 + Una opción sería [Task](https://github.com/go-task/task). 
     + Task recibe mantenimiento asiduamente, lo cual se puede apreciar en la página de github.
-    
-    + Requiere la instalación de código así como añadir el mismo a las variables de entorno del sistema.
-
-    + Task incluye funcionalides que permiten modificar la forma de ejecutar las tareas, el directorio de ejecución, el formato de la salida, entre otras muchas posibilidades.
 
 + La última opción considerada es [Make](https://www.gnu.org/software/make/). También requiere la instalación de código externo, aunque suele venir como parte de muchas distribuciones Linux.
 
     + Make recibe mantenimiento asiduamente, como se puede apreciar en su documentación.
-
-    + La mayoría de distribuciones Linux traen este gestor de tareas instalado, aunque podría ser necesaria la instalación del mismo.
-
-    + Make incluye funcionalidades que permiten modificar sobre que archiovs se ejecutan las tareas, la forma en que se ejecutan, el formato de salida, el archivo que se va a usar como Makefile (por defecto se usa Makefile), etc.
 
 
 Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso años) sin recibir soporte, luego los he descartado automáticamente.
