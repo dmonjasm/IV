@@ -16,7 +16,7 @@ check:
 	@echo "Checking syntax..."
 	gofmt -e ./internal/* > /dev/null
 ## Build:
-build: ## Build your project and put the output binary in out/bin/
+build: clean ## Build your project and put the output binary in out/bin/
 	@echo "Compilando..."
 	mkdir ./bin
 	$(GOCMD) build -o ./bin/$(BINARY_NAME) ./internal/

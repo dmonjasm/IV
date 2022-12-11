@@ -27,23 +27,44 @@ Sí, todo queda enlazado en el apartado configuración git del README.
 ## Elección Gestor de Tareas
 Para la elección del gestor de tareas se van a tener en cuenta:
 + Estándares de GO.
-+ Mejores Prácticas.
-+ Deuda técnia. Soporte. Documentación.
-+ Prestaciones.
++ Mantenimiento.
++ Funcionalidades.
 
 Voy a utilizar la información del repositorio [Awesome Go](https://github.com/avelino/awesome-go).
 
-Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar Task y el *task runner* implícito de GO.
+Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar Task, el *task runner* implícito de GO y make:
 
-+ El *task runner* implícito de GO se trata de una herramienta para la gestión de código GO. Como consecuencia de ir implícito en GO tiene un amplio soporte, pues se ve actualizado con el propio lenguaje. Luego cumple el apartado de deuda técnica. Respecto a estándares GO recomienda utilizar el *task runner* implícito para la automatización de tareas (aunque es normal, pues el mismo lo diseña), aunque algunos proyectos combinan el anterior con Makefile.
++ El *task runner* implícito de GO se trata de una herramienta para la gestión de código GO. 
 
-+ Otra opción sería [Task](https://github.com/go-task/task). Este al igual que el anterior cumple el requisito de la deuda técnica, pues tiene actualizaciones regulares. Si bien cumple la deuda técnica creo que es mejor el *task runner* implícito, pues si bien actualmente Task recibe soporte en un futuro no se sabe si seguirá recibiéndolo, mientras que el anterior recibirá soporte siempre que GO lo reciba. Por otro lado, este *task manager* no es estándar.
+    + Como consecuencia de ir implícito en GO tiene un amplio soporte, pues se ve actualizado con el propio lenguaje. 
+
+    + Respecto a estándares GO recomienda utilizar el *task runner* implícito para la automatización de tareas (aunque es normal, pues el mismo lo diseña). 
+
+    + En cuento a las funcionalides, este nos trae una amplia selección, entre las que se destacan compilación de paquetes y dependencias, instalación de paquetes y dependencias, limpieza de archivos objeto y caché, etc.
+
+
++ Otra opción sería [Task](https://github.com/go-task/task). El principal problema de este es que requiere la instalación de código externo, aunque esta es bastante simple.
+
+    + Este al igual que el anterior cumple el requisito de mantenimiento, pues tiene actualizaciones regulares. Si bien cumple la deuda técnica creo que es mejor el *task runner* implícito, pues si bien actualmente Task recibe soporte en un futuro no se sabe si seguirá recibiéndolo, mientras que el anterior recibirá soporte siempre que GO lo reciba.
+
+    + Por otro lado, este *task manager* no es estándar, surge como alternativa más simple que Make. Este utiliza archivos .yml o .yaml para la automatización de tareas.
+
+    + Respecto a las funcionalidades ofrecerá todas aquellas que se implementen en el archivo *Taskfile*. 
+
++ La última opción considerada es [Make](https://www.gnu.org/software/make/). También requiere la instalación de código externo, aunque suele venir como parte de muchas distribuciones Linux.
+
+    + Make sigue recibiendo soporte, en concreto la última actualización es del 31 de Octubre de 2022, luego cumple el requisito del mantenimiento. Además a diferencia de Task, debido a la gran popularidad de Make es probable que reciba soporte durante muchos más años.
+
+    + Este *task runner* no es el estándar de GO, aunque es ampliamente utilizado.
+
+    + En cuanto a funcionalidades, ocurre como con Task, tendrá todas las funcionalidades que tenga el archivo Makefile implementadas.
+
 
 Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso años) sin recibir soporte, luego los he descartado automáticamente.
 
-He decidido utilizar el *task runner* implícito de GO. Se trata del estándar que recomienda GO y además tiene un amplio soporte, mientras que Task solo cumple el criterio de deuda técnica.
+He decidido utilizar Make. Aunque no es el estándar que recomienda GO, es ampliamente utilizado en el desarrollo de proyectos, permite la utilización de todas las funcionalidades del *task runner* implícito de GO, siempre que se implementen en el Makefile y recibe soporte de forma regular.
 
-Por otro lado, en los requisitos del objetivo 3 nos pide que incluyamos una clave fichero en el iv.yaml que apuntará al archivo que se usará para ejecutar las tareas. Debido a esto he decido combinar Make con el *task runner* implícito de GO.
+En los requisitos del objetivo 3 nos pide que incluyamos una clave fichero en el iv.yaml que apuntará al archivo que se usará para ejecutar las tareas.
 
 Creo que a pesar de combinar con Make sigue siendo mejor opción, ya que buscando comparaciones entre Make y Task, no he encontrado una clara ventaja para elegir uno sobre otro. Luego la deuda técnica y los estándares es lo que me ha decantado por Make+GO.
 
@@ -59,4 +80,3 @@ En este apartado se incluyen las distintas órdenes que acepta el Makefile del p
 + make test: no implementado todavía. En un futuro ejecutará los tests.
 + make help: muestra las posible órdenes aceptadas por el make.
 + make: ejecuta check, build y clean.
-
