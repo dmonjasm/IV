@@ -34,15 +34,15 @@ Voy a utilizar la información del repositorio [Awesome Go](https://github.com/a
 
 Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar Task y make:
 
-+ Una opción sería [Task](https://github.com/go-task/task).
++ Una opción sería [Task](https://github.com/go-task/task), surge como una alternativa más simple que Make. Task ejecuta tareas registradas en un Taskfile con formato .yml o .yaml. La sintaxis de los Taskfile es bastante sencilla, si bien requiere más líneas que los Makefile.
 
     + Task recibe mantenimiento asiduamente, lo cual se puede apreciar en la página de github.
 
     + Task es más rápido en la ejecución de tareas que Make, para ello se han ejecutado tareas de compilación e instalación de dependencias y se han demostrado que los tiempos obtenidos por Task han sido mejores que los obtenidos por Make.
 
-    + La sintaxis de los Taskfile, utilizados por Task, son ficheros .yml o .yaml, y estos proporcionan una sintaxis más simple que la necesitada por los Makefile, en particular, para proyectos grandes.
+    + La sintaxis de los Taskfile es más simple que la necesitada por los Makefile, en particular, para proyectos grandes. Requiere más líneas que un Makefile y la indentación puede ser problemática, pero permite generar tareas fáciles de entender para el programador.
 
-+ La última opción considerada es [Make](https://www.gnu.org/software/make/).
++ La última opción considerada es [Make](https://www.gnu.org/software/make/). Es una herramienta que se ha utilizado ampliamente durante los años, pero su sintaxis y los errores derivados de esta hacen que sea compleja de usar para proyectos de gran tamaño.
 
     + Make recibe mantenimiento asiduamente, como se puede apreciar en su documentación.
 
@@ -53,12 +53,12 @@ Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar
 
 Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso años) sin recibir soporte, luego los he descartado automáticamente.
 
-Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Task. Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
+Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Task. Task y Make reciben ambos soporte asiduamente, pero Task obtiene unos mejores tiempos en la ejecución de las tareas, además de usar una sintaxis más simple que Make. Por estas razones he elegido Task.
 
 ## Elección Gestor de Dependencias
 La gestión de dependencias en GO se hace por medio la herramienta de línea de órdenes de GO. Es más, buscando gestores de dependencias para GO he visto que están obsoletos, y que los repositorios de los mismo han sido archivados.
 
-Luego realmente no se requiere de un gestor de dependencias concreto. En este caso, como hemos usado Make como gestor de tareas simplemente añadimos al Makefile las claves necesarias para la gestión de dependencias.
+Luego realmente no se requiere de un gestor de dependencias concreto. En este caso, como hemos usado Make como gestor de tareas simplemente añadimos al Taskfile las claves necesarias para la gestión de dependencias.
 
 ## Órdenes Makefile
 En este apartado se incluyen las distintas órdenes que acepta el Makefile del proyecto:
