@@ -60,12 +60,12 @@ La gestión de dependencias en GO se hace por medio la herramienta de línea de 
 
 Luego realmente no se requiere de un gestor de dependencias concreto. En este caso, como hemos usado Make como gestor de tareas simplemente añadimos al Taskfile las claves necesarias para la gestión de dependencias.
 
-## Órdenes Makefile
-En este apartado se incluyen las distintas órdenes que acepta el Makefile del proyecto:
-+ make check: comprueba la sintaxis de todos los archivos y devuelve los errores.
-+ make build: compila todos los archivos del proyecto actual. Almacena los compilados en ./bin.
-+ make installdeps: instala las dependencias de todos los archivos go que cuelgan del directorio raíz.
-+ make clean: elimina los archivos compilados almacenados en ./bin.
-+ make test: no implementado todavía. En un futuro ejecutará los tests.
-+ make help: muestra las posible órdenes aceptadas por el make.
-+ make: ejecuta check, build y clean.
+## Órdenes Taskfile
+En este apartado se incluyen las distintas órdenes que acepta el Taskfile del proyecto:
++ go-task check: comprueba la sintaxis de todos los archivos y devuelve los errores.
++ go-task build: compila todos los archivos del proyecto actual. Almacena los compilados en ./bin.
++ go-task installdeps: instala las dependencias de todos los archivos go que cuelgan del directorio raíz.
++ go-task clean: elimina los archivos compilados almacenados en ./bin.
++ go-task test: no implementado todavía. En un futuro ejecutará los tests.
++ go-task list: muestra las posible órdenes aceptadas por Task y una descripción de que hace cada cosa.
++ go-task: ejecuta check, build y clean.
