@@ -26,24 +26,15 @@ Sí, todo queda enlazado en el apartado configuración git del README.
 
 ## Elección Gestor de Tareas
 Para la elección del gestor de tareas se van a tener en cuenta:
-+ Estándares de GO.
-+ Mantenimiento.
-+ Funcionalidades.
++ Deuda técnica. En particular vamos a buscar que la herramienta reciba mantenimiento con asiduidad.
++ Instalación. Si la requiere, y en caso de así ser, cómo de compleja es la misma.
+
 
 Voy a utilizar la información del repositorio [Awesome Go](https://github.com/avelino/awesome-go).
 
-Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar Task, el *task runner* implícito de GO y make:
+Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar Task y make:
 
-+ El *task runner* implícito de GO se trata de una herramienta para la gestión de código GO. 
-
-    + Como consecuencia de ir implícito en GO tiene un amplio soporte, pues se ve actualizado con el propio lenguaje. 
-
-    + Respecto a estándares GO recomienda utilizar el *task runner* implícito para la automatización de tareas (aunque es normal, pues el mismo lo diseña). 
-
-    + En cuento a las funcionalides, este nos trae una amplia selección, entre las que se destacan compilación de paquetes y dependencias, instalación de paquetes y dependencias, limpieza de archivos objeto y caché, etc. El problema es que no podrá realizar tareas más allá de las funcionalidades que este trae, lo cual hace que lo descarte.
-
-
-+ Otra opción sería [Task](https://github.com/go-task/task). El principal problema de este es que requiere la instalación de código externo, aunque esta es bastante simple.
++ Una opción sería [Task](https://github.com/go-task/task). El principal problema de este es que requiere la instalación de código externo, aunque esta es bastante simple.
 
     + Este al igual que el anterior cumple el requisito de mantenimiento, pues tiene actualizaciones regulares. Si bien cumple el requisito de mantenimiento creo que son mejores el *task runner* implícito o Make, pues si bien actualmente Task recibe soporte, en un futuro no se sabe si seguirá recibiéndolo, mientras que las otras dos opciones debido a que una se actualiza con el propio lenguaje y la otra es tremendamente popular, garantizan su soporte durante los próximos años.
 
