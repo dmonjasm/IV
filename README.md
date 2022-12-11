@@ -55,8 +55,6 @@ Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso a
 
 Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Make. Buscando comparaciones entre Make y Task, no he encontrado una clara ventaja para elegir uno sobre otro, la elección de Make se debe a que, aunque las dos son buenas opciones, Make tiene todas las funcionalidades que incluy Task y inlcuye algunas más que nos permiten tener en cuenta la ocupación actual, como por ejemplo -l.  Make recibe soporte de forma regular, y gracias a su gran popularidad y la gran cantidad de años que lleva en desarrollo, no se prevee que en un futuro deje de recibirlo.
 
-En los requisitos del objetivo 3 nos pide que incluyamos una clave fichero en el iv.yaml que apuntará al archivo que se usará para ejecutar las tareas. En este caso el fichero va a ser el Makefile
-
 ## Elección Gestor de Dependencias
 La gestión de dependencias en GO se hace por medio la herramienta de línea de órdenes de GO. Es más, buscando gestores de dependencias para GO he visto que están obsoletos, y que los repositorios de los mismo han sido archivados.
 
