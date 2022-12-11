@@ -2,5 +2,5 @@ lenguaje: go
 entidad: internal/ruta.go
 
 automatizar:
-  fichero: Makefile
-  orden: make
+  fichero: Taskfile
+  orden: go-task
