@@ -23,3 +23,58 @@ Sí, va a ser necesario hacer Web Scraping y probar varias combinaciones de ruta
 
 * [x] ¿Se ha incluído la configuración del repositorio y se ha enlazado desde el README?
 Sí, todo queda enlazado en el apartado configuración git del README.
+
+## Elección Gestor de Tareas
+Para la elección del gestor de tareas se van a tener en cuenta:
++ Deuda técnica. En particular vamos a buscar que la herramienta reciba mantenimiento con asiduidad.
++ Prestaciones. En particular, el tiempo que toma la ejecución de las tareas
++ Dificultad de la sintaxis.
+
+Voy a utilizar la información del repositorio [Awesome Go](https://github.com/avelino/awesome-go).
+
+Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar Task y make:
+
++ Una opción sería [Task](https://github.com/go-task/task), surge como una alternativa más simple que Make. Task ejecuta tareas registradas en un Taskfile con formato .yml o .yaml. La sintaxis de los Taskfile es bastante sencilla, si bien requiere más líneas que los Makefile.
+
+    + Task recibe mantenimiento asiduamente, lo cual se puede apreciar en la página de github.
+
+    + Task es más rápido en la ejecución de tareas que Make, para ello se han ejecutado tareas de compilación e instalación de dependencias y se han demostrado que los tiempos obtenidos por Task han sido mejores que los obtenidos por Make. Se adjunta una tabla con los tiempos obtenidos por cada gestor de tareas para distintas tareas.
+
+        | Tiempos       | Task  | Make  |
+        |---------------|-------|-------|
+        | default       |  0.028s     | 0.078s      |  
+        | build         |  0.044s     | 0.051s      |
+        | check         |  0.021s     | 0.039s      |
+        | installdeps   |  0.038s     | 0.057s      |    
+        | test          |  0.015s     | 0.034s      |
+        | clean         |  0.017s     | 0.027s      |
+
+    + La sintaxis de los Taskfile es más simple que la necesitada por los Makefile, en particular, para proyectos grandes. Requiere más líneas que un Makefile y la indentación puede ser problemática, pero permite generar tareas fáciles de entender para el programador.
+
++ La última opción considerada es [Make](https://www.gnu.org/software/make/). Es una herramienta que se ha utilizado ampliamente durante los años, pero su sintaxis y los errores derivados de esta hacen que sea compleja de usar para proyectos de gran tamaño.
+
+    + Make recibe mantenimiento asiduamente, como se puede apreciar en su documentación.
+
+    + Make es más lento en la ejecución de tareas que Task.
+
+    + La sintaxis de los Makefile se vuelve compleja de entender cuando se tratan de proyectos grandes.
+
+
+Hay otros *task runners*, aunque estos llevan bastante tiempo (meses o incluso años) sin recibir soporte, luego los he descartado automáticamente.
+
+Task y Make son dos buenos candidatos para usar como gestor de tareas, pero he decidido utilizar Task. Task y Make reciben ambos soporte asiduamente, pero Task obtiene unos mejores tiempos en la ejecución de las tareas, además de usar una sintaxis más simple que Make. Por estas razones he elegido Task.
+
+## Elección Gestor de Dependencias
+La gestión de dependencias en GO se hace por medio la herramienta de línea de órdenes de GO. Es más, buscando gestores de dependencias para GO he visto que están obsoletos, y que los repositorios de los mismo han sido archivados.
+
+Luego realmente no se requiere de un gestor de dependencias concreto. En este caso, como hemos usado Task como gestor de tareas simplemente añadimos al Taskfile las claves necesarias para la gestión de dependencias.
+
+## Órdenes Taskfile
+En este apartado se incluyen las distintas órdenes que acepta el Taskfile del proyecto:
++ go-task check: comprueba la sintaxis de todos los archivos y devuelve los errores.
++ go-task build: compila todos los archivos del proyecto actual. Almacena los compilados en ./bin.
++ go-task installdeps: instala las dependencias de todos los archivos go que cuelgan del directorio raíz.
++ go-task clean: elimina los archivos compilados almacenados en ./bin.
++ go-task test: no implementado todavía. En un futuro ejecutará los tests.
++ go-task list: muestra las posible órdenes aceptadas por Task y una descripción de que hace cada cosa.
++ go-task: ejecuta check, build y clean.
