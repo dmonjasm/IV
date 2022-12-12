@@ -38,7 +38,16 @@ Si nos vamos al apartado de dicho repositorio de Build Automation voy a destacar
 
     + Task recibe mantenimiento asiduamente, lo cual se puede apreciar en la página de github.
 
-    + Task es más rápido en la ejecución de tareas que Make, para ello se han ejecutado tareas de compilación e instalación de dependencias y se han demostrado que los tiempos obtenidos por Task han sido mejores que los obtenidos por Make.
+    + Task es más rápido en la ejecución de tareas que Make, para ello se han ejecutado tareas de compilación e instalación de dependencias y se han demostrado que los tiempos obtenidos por Task han sido mejores que los obtenidos por Make. Se adjunta una tabla con los tiempos obtenidos por cada gestor de tareas para distintas tareas.
+
+        | Tiempos       | Task  | Make  |
+        |---------------|-------|-------|
+        | default       |  0.028s     | 0.078s      |  
+        | build         |  0.044s     | 0.051s      |
+        | check         |  0.021s     | 0.039s      |
+        | installdeps   |  0.038s     | 0.057s      |    
+        | test          |  0.015s     | 0.034s      |
+        | clean         |  0.017s     | 0.027s      |
 
     + La sintaxis de los Taskfile es más simple que la necesitada por los Makefile, en particular, para proyectos grandes. Requiere más líneas que un Makefile y la indentación puede ser problemática, pero permite generar tareas fáciles de entender para el programador.
 
