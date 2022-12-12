@@ -1,4 +1,5 @@
 lenguaje: go
+
 entidad: internal/ruta.go
 
 automatizar:
