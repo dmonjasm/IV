@@ -78,3 +78,13 @@ En este apartado se incluyen las distintas órdenes que acepta el Taskfile del p
 + go-task test: no implementado todavía. En un futuro ejecutará los tests.
 + go-task list: muestra las posible órdenes aceptadas por Task y una descripción de que hace cada cosa.
 + go-task: ejecuta check, build y clean.
+
+## Elección de *test runner*
+Para la elacción del *test runner* voy a priorizar:
++ Que ofrezca funciones de aserción.
++ Que reciba mantenimiento con asiduidad.
+
+Entre posibles *test runners* para GO he encontrado:
++ [Testity](https://github.com/stretchr/testify): se trata de un framework para el testeo y es uno de los más populares. Testify ofrece funciones de aserción para la comparación y verificación de valores. También propociona funcionalidades de *mock* que se pueden utilizar en el código de los test. Fijándonos en su repositorio de github recibe mantenimiento de forma asidua.
++ [Testing](https://pkg.go.dev/testing): se trata del paquete por defecto proporcionado por GO, permite el testeo de paquetes y utiliza la herramienta de comando en línea de go, `go test`. Por ser un paquete proporcionado por GO recibe mantenimiento con asiduidad. El problema de esta opción es que no soporta aserciones. 
++ [GoConvey](https://github.com/smartystreets/goconvey): es un framework de testing BDD que, al igual que todos los anteriores, es compatible con el comando `go test` de la herramienta de comandos en línea de go. Sin embargo, fijándonos en su repositorio de github lleva un cierto tiempo sin recibir mantenimiento (más de un año).
