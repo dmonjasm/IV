@@ -83,8 +83,12 @@ En este apartado se incluyen las distintas órdenes que acepta el Taskfile del p
 Para la elacción del *test runner* voy a priorizar:
 + Que ofrezca funciones de aserción.
 + Que reciba mantenimiento con asiduidad.
++ Customización de la salida.
 
 Entre posibles *test runners* para GO he encontrado:
-+ [Testity](https://github.com/stretchr/testify): se trata de un framework para el testeo y es uno de los más populares. Testify ofrece funciones de aserción para la comparación y verificación de valores. También propociona funcionalidades de *mock* que se pueden utilizar en el código de los test. Fijándonos en su repositorio de github recibe mantenimiento de forma asidua.
-+ [Testing](https://pkg.go.dev/testing): se trata del paquete por defecto proporcionado por GO, permite el testeo de paquetes y utiliza la herramienta de comando en línea de go, `go test`. Por ser un paquete proporcionado por GO recibe mantenimiento con asiduidad. El problema de esta opción es que no soporta aserciones. 
-+ [GoConvey](https://github.com/smartystreets/goconvey): es un framework de testing BDD que, al igual que todos los anteriores, es compatible con el comando `go test` de la herramienta de comandos en línea de go. Sin embargo, fijándonos en su repositorio de github lleva un cierto tiempo sin recibir mantenimiento (más de un año).
++ [Testity](https://github.com/stretchr/testify): se trata de un framework para el testeo y es uno de los más populares. Testify ofrece funciones de aserción para la comparación y verificación de valores. También propociona funcionalidades de *mock* que se pueden utilizar en el código de los test. Fijándonos en su repositorio de github recibe mantenimiento de forma asidua. Respecto a la salida, no es customizable y es bastante estándar.
++ [Testing](https://pkg.go.dev/testing): se trata del paquete por defecto proporcionado por GO, permite el testeo de paquetes y utiliza la herramienta de comando en línea de go, `go test`. Por ser un paquete proporcionado por GO recibe mantenimiento con asiduidad. El problema de esta opción es que no soporta aserciones. La salida proporcionada es completamente estándar. 
++ [GoConvey](https://github.com/smartystreets/goconvey): es un framework de testing BDD que, al igual que todos los anteriores, es compatible con el comando `go test` de la herramienta de comandos en línea de go. Sin embargo, fijándonos en su repositorio de github lleva un cierto tiempo sin recibir mantenimiento (más de un año). Permite la salida por terminal o bien por interfaz web, en ambos casos la salida es similar, coloreada, detallada y fácil de leer.
++ [Ginkgo](https://github.com/onsi/ginkgo): se trata de un framefork de testeo de tipy BDD. Fijándonos en su repositorio vemos que recibe mantenimiento con asiduidad. Proporciona *container nodes* que asisten a la organización de especificaciones y a la creación de aserciones. La salida es fácil de leer y se puede obtener en varios formatos. Además se puede customizar como se recoge dicha salida.
+
+Atendiendo a las opciones consideradas voy a elegir Ginkgo como *test runner*.
