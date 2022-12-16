@@ -94,3 +94,6 @@ Entre posibles *test runners* para GO he encontrado:
 Atendiendo a las opciones consideradas voy a elegir Ginkgo como *test runner*.
 
 ## Elección biblioteca de aserciones
+Se podrían utilizar opciones como la librería [assert](https://github.com/stretchr/testify/tree/master/assert) de Testify, pero no proporciona ninguna mejora respecto a las proporcionadas por [Gomega](https://github.com/onsi/gomega).
+
+Teniendo en cuenta que las funcionalidades proporcionadas son similares y que la biblioteca de aserciones que recomienda Ginkgo es Gomega voy a escoger esta.
