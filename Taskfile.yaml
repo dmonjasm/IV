@@ -5,7 +5,7 @@ version: '3'
 tasks:
   default:
     desc: Checks syntax, builds the source code and deletes the binary objects
-    deps: [check, installdeps, build, clean]
+    deps: [check, installdeps, build]
     silent: true
 
   build:
@@ -41,5 +41,6 @@ tasks:
   clean:
     desc: Deletes binary objects
     cmds:
+      - echo "Limpiando directorio..."
       - rm -fr ./bin
     silent: true
