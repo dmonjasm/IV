@@ -29,8 +29,23 @@ func EstimatedDistance(ruta Ruta) (uint, error) {
 	distancia_total = 0
 
 	for i := 0; i < len(ruta.tramos); i++ {
-		distancia_total += distancia_total + ruta.tramos[i].distancia
+		distancia_total += ruta.tramos[i].distancia
 	}
 
 	return distancia_total, nil
+}
+
+func EstimatedTime(ruta Ruta) (float32, error) {
+	if len(ruta.tramos) == 0 {
+		return -1.0, errors.New("Una ruta debe contener mínimo un tramo.")
+	}
+
+	var tiempo_total float32
+	tiempo_total = 0.0
+
+	for i := 0; i < len(ruta.tramos); i++ {
+		tiempo_total += float32(ruta.tramos[i].distancia) / float32(ruta.tramos[i].velocidadLimite)
+	}
+
+	return tiempo_total, nil
 }
