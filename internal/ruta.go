@@ -19,3 +19,18 @@ func NewRuta(tramos []Tramo, peaje Peaje) (*Ruta, error) {
 	}
 	return &Ruta{tramos, peaje}, nil
 }
+
+func EstimatedDistance(ruta Ruta) (uint, error) {
+	if len(ruta.tramos) == 0 {
+		return 0, errors.New("Una ruta debe contener mínimo un tramo.")
+	}
+
+	var distancia_total uint
+	distancia_total = 0
+
+	for i := 0; i < len(ruta.tramos); i++ {
+		distancia_total += distancia_total + ruta.tramos[i].distancia
+	}
+
+	return distancia_total, nil
+}
