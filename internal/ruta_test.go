@@ -4,7 +4,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"example.com/internal"
+	"github.com/dmonjasm/RouteCheck"
 )
 
 var _ = Describe("Ruta", func() {
@@ -16,7 +16,7 @@ var _ = Describe("Ruta", func() {
 		a_4, _ = NewTramo(360, 120)
 		a_44, _ = NewTramo(117, 100)
 		gr_30, _ = NewTramo(45, 90)
-		madrid_granada, _ = NewRuta([m_30,a_4,a_44,gr_30], 0.0)
+		madrid_granada, _ = NewRuta([4]Tramo{m_30, a_4, a_44, gr_30}, 0.0)
 	})
 
 	Describe("Calculating total distance", func() {
