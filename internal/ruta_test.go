@@ -21,16 +21,18 @@ var _ = Describe("Ruta", func() {
 
 	Describe("Calculating total distance", func() {
 		It("should be the sum of the tramo distances", func() {
-			var total_distance, _ = internal.EstimatedDistance(madrid_granada)
+			var total_distance, err = internal.EstimatedDistance(madrid_granada)
 
+			Expect(err).NotTo(HaveOccurred())
 			Expect(total_distance).To(Equal(uint(529)))
 		})
 	})
 
 	Describe("Calculating total route time", func() {
 		It("should be the sum of the times of the tramos", func() {
-			var total_time, _ = internal.EstimatedTime(madrid_granada)
+			var total_time, err = internal.EstimatedTime(madrid_granada)
 
+			Expect(err).NotTo(HaveOccurred())
 			Expect(total_time).To(Equal(float32(4.77)))
 		})
 	})

@@ -1,4 +1,4 @@
-module github.com/dmonjasm/RouteCheck
+module example.com
 
 go 1.19
 
