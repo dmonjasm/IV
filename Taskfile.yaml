@@ -35,6 +35,7 @@ tasks:
     desc: Tests
     cmds:
       - echo "Testing..."
+      - go test ./internal/ruta_test.go
     silent: true
     
   clean:
