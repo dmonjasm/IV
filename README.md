@@ -94,6 +94,8 @@ Entre posibles *test runners* (realmente son *test frameworks*, menos *Testing*)
 
 Atendiendo a las opciones consideradas voy a elegir Ginkgo como *test runner* (*test framework*).
 
+Realmente todos los mencionados arriba (menos *Testing*) son *test frameworks*, se los ha denominado como *test runners* porque el interés está en el *test runner* que incluyen.
+
 ## Elección biblioteca de aserciones
 Se podrían utilizar opciones como la librería [assert](https://github.com/stretchr/testify/tree/master/assert) de Testify, pero no proporciona ninguna mejora respecto a las proporcionadas por [Gomega](https://github.com/onsi/gomega). Además, Omega es la librería proporcionada por *Ginkgo*, luego debido a la elección del *test runner*, puedo trabajar con las excepciones de esta.
 
