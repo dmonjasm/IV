@@ -4,7 +4,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"example.com/internal"
+	"github.com/dmonjasm/RouteCheck/internal"
 )
 
 var _ = Describe("Ruta", func() {
