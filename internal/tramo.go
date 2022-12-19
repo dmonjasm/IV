@@ -6,12 +6,12 @@ type Tramo struct{
     velocidadLimite uint8
 }
 
-func NewTramo(distancia uint, velocidadLimite uint8)(*Tramo, error){
+func NewTramo(distancia uint, velocidadLimite uint8)(Tramo, error){
 	err := NewTramoError(distancia, velocidadLimite)
 	if err != nil{
-		return nil, err
+		return Tramo{}, err
 	}
-    return &Tramo{distancia, velocidadLimite}, nil
+    return Tramo{distancia, velocidadLimite}, nil
 }
 
 func NewTramoError(distancia uint,velocidadLimite uint8) error{
