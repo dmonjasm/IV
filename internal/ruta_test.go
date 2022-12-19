@@ -17,6 +17,8 @@ var _ = Describe("Ruta", func() {
 	var m_301, cm_4005, n_401, n_420, n_432 internal.Tramo
 	var madrid_granada_3 internal.Ruta
 
+	var different_routes []internal.Ruta
+
 
 	BeforeEach(func() {
 		m_30, _ = 	internal.NewTramo(7, 70)
@@ -36,6 +38,8 @@ var _ = Describe("Ruta", func() {
 		n_420, _ = internal.NewTramo(140, 90)
 		n_432, _ = internal.NewTramo(130, 90)
 		madrid_granada_3, _ = internal.NewRuta([]internal.Tramo{m_301, cm_4005, n_401, n_420, n_432}, 0.0)
+
+		different_routes = []interal.Ruta{madrid_granada_1, madrid_granada_2, madrid_granada_3}
 	})
 
 	Describe("Calculating total distance", func() {
@@ -53,6 +57,35 @@ var _ = Describe("Ruta", func() {
 
 			Expect(err).NotTo(HaveOccurred())
 			Expect(total_time).To(Equal(float32(4.77)))
+		})
+	})
+
+	Describe("Choosing optimal route for", func() {
+		Context("fastest route", func() {
+			It("should be the fastest route", func(){
+				var fastest_route, err = internal.FastestRoute(different_routes)
+
+				Expect(err).NotTo(HaveOccurred())
+				Expect(fastest_route).To(Equal(madrid_granada_1))
+			})
+		})
+
+		Context("cheapest route", func() {
+			It("should be the cheapest route", func(){
+				var cheapest_route, err = internal.CheapestRoute(different_routes)
+
+				Expect(err).NotTo(HaveOccurred())
+				Expect(cheapest_route).To(Equal(madrid_granada_3))
+			})
+		})
+
+		Context("best cost/time route", func() {
+			It("should be the best cost/time route", func(){
+				var cost_time_route, err = internal.CostTimeRoute(different_routes)
+
+				Expect(err).NotTo(HaveOccurred())
+				Expect(cost_time_route).To(Equal(madrid_granada_2))
+			})
 		})
 	})
 })
