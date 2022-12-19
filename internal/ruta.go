@@ -59,19 +59,17 @@ func FastestRoute(rutas []Ruta) (Ruta, error) {
 	var mejor_tiempo float32
 	var tiempo_actual float32
 
-	mejor_tiempo = EstimatedTime(rutas[0])
+	mejor_tiempo, _ = EstimatedTime(rutas[0])
 	fastest_route = rutas[0]
 	
 
 	for i := 1; i < len(rutas); i++ {
-		tiempo_actual = EstimatedTime(rutas[i])
+		tiempo_actual, _ = EstimatedTime(rutas[i])
 
-		if tiempo_actual < tiempo_total{
+		if tiempo_actual < mejor_tiempo{
 			mejor_tiempo = tiempo_actual
 			fastest_route = rutas[i]
-		}
-
-		else if tiempo_actual == tiempo_total {
+		} else if tiempo_actual == mejor_tiempo {
 			if rutas[i].peaje < fastest_route.peaje{
 				fastest_route = rutas[i]
 			}
@@ -87,23 +85,23 @@ func CheapestRoute(rutas []Ruta) (Ruta, error) {
 	}
 
 	var cheapest_route Ruta
-	var mejor_precio float32
-	var precio_actual float32
+	var mejor_precio Peaje
+	var precio_actual Peaje
 
 	mejor_precio = rutas[0].peaje
 	cheapest_route = rutas[0]
 	
 
 	for i := 1; i < len(rutas); i++ {
-		precio_actual = EstimatedTime(rutas[i])
+		precio_actual = rutas[i].peaje
 
-		if precio_actual < precio_total{
-			mejor_tiempo = precio_actual
+		if precio_actual < mejor_precio{
+			mejor_precio = precio_actual
 			cheapest_route = rutas[i]
-		}
-
-		else if precio_actual == precio_total {
-			if EstimatedTime(rutas[i]) < EstimatedTime(cheapest_route) {
+		} else if precio_actual == mejor_precio {
+			tiempo_actual, _ := EstimatedTime(rutas[i])
+			tiempo_mejor_ruta, _ := EstimatedTime(cheapest_route)
+			if tiempo_actual < tiempo_mejor_ruta{
 				cheapest_route = rutas[i]
 			}
 		}
@@ -120,22 +118,26 @@ func CostTimeRoute(rutas []Ruta) (Ruta, error) {
 	var best_route Ruta
 	var best_cost_time_relation float32
 	var cost_time_actual float32
+	var tiempo_actual float32
+	var distancia_actual uint
 
 	//Se calcula la velocidad media de la ruta pero se le quita a la misma el precio del via ya que
 	//se entiende que una ruta cara no debería sobrepasar los 50€ en peajes y que la velocidad media
 	//debería ser alta.
-	best_cost_time_relation = (EstimatedDistance(rutas[0]) / (EstimatedTime(rutas[0]))) - ruta[0].peaje
+	tiempo_actual, _ = EstimatedTime(rutas[0])
+	distancia_actual, _ = EstimatedDistance(rutas[0])
+	best_cost_time_relation = (float32(distancia_actual) / tiempo_actual) - float32(rutas[0].peaje)
 	best_route = rutas[0]
 
 	for i := 1; i < len(rutas); i++ {
-		cost_time_actual = (EstimatedDistance(rutas[i]) / (EstimatedTime(rutas[i]))) - ruta[i].peaje
+		tiempo_actual, _ = EstimatedTime(rutas[i])
+		distancia_actual, _ = EstimatedDistance(rutas[i])
+		cost_time_actual = (float32(distancia_actual) / tiempo_actual) - float32(rutas[i].peaje)
 
 		if cost_time_actual > best_cost_time_relation {
 			best_cost_time_relation = cost_time_actual
 			best_route = rutas[i] 
-		}
-
-		else if cost_time_actual > best_cost_time_relation{
+		} else if cost_time_actual > best_cost_time_relation{
 			//Como no se le ha dado un gran peso al precio consideramos que dos rutas con una relación similar
 			//mantendrán una velocidad media similar, luego optaremos por la más barata
 			if rutas[i].peaje < best_route.peaje{
