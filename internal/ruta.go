@@ -80,3 +80,34 @@ func FastestRoute(rutas []Ruta) (Ruta, error) {
 
 	return fastest_route, nil
 }
+
+func CheapestRoute(rutas []Ruta) (Ruta, error) {
+	if len(rutas) == 0 {
+		return Ruta{}, errors.New("Se debe proporcionar mínimo una ruta.")
+	}
+
+	var cheapest_route Ruta
+	var mejor_precio float32
+	var precio_actual float32
+
+	mejor_precio = rutas[0].peaje
+	cheapest_route = rutas[0]
+	
+
+	for i := 1; i < len(rutas); i++ {
+		precio_actual = EstimatedTime(rutas[i])
+
+		if precio_actual < precio_total{
+			mejor_tiempo = precio_actual
+			cheapest_route = rutas[i]
+		}
+
+		else if precio_actual == precio_total {
+			if EstimatedTime(rutas[i]) < EstimatedTime(cheapest_route) {
+				cheapest_route = rutas[i]
+			}
+		}
+	}
+
+	return cheapest_route, nil
+}
