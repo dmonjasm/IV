@@ -111,3 +111,38 @@ func CheapestRoute(rutas []Ruta) (Ruta, error) {
 
 	return cheapest_route, nil
 }
+
+func CostTimeRoute(rutas []Ruta) (Ruta, error) {
+	if len(rutas) == 0 {
+		return Ruta{}, errors.New("Se debe proporcionar mínimo una ruta.")
+	}
+
+	var best_route Ruta
+	var best_cost_time_relation float32
+	var cost_time_actual float32
+
+	//Se calcula la velocidad media de la ruta pero se le quita a la misma el precio del via ya que
+	//se entiende que una ruta cara no debería sobrepasar los 50€ en peajes y que la velocidad media
+	//debería ser alta.
+	best_cost_time_relation = (EstimatedDistance(rutas[0]) / (EstimatedTime(rutas[0]))) - ruta[0].peaje
+	best_route = rutas[0]
+
+	for i := 1; i < len(rutas); i++ {
+		cost_time_actual = (EstimatedDistance(rutas[i]) / (EstimatedTime(rutas[i]))) - ruta[i].peaje
+
+		if cost_time_actual > best_cost_time_relation {
+			best_cost_time_relation = cost_time_actual
+			best_route = rutas[i] 
+		}
+
+		else if cost_time_actual > best_cost_time_relation{
+			//Como no se le ha dado un gran peso al precio consideramos que dos rutas con una relación similar
+			//mantendrán una velocidad media similar, luego optaremos por la más barata
+			if rutas[i].peaje < best_route.peaje{
+				best_route = rutas[i]
+			}
+		}
+	}
+
+	return best_route, nil
+}
