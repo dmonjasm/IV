@@ -35,7 +35,7 @@ tasks:
     desc: Tests
     cmds:
       - echo "Testing..."
-      - ginkgo ./internal/
+      - ginkgo -r -p ./internal/
     silent: true
     
   clean:
