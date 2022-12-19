@@ -49,3 +49,34 @@ func EstimatedTime(ruta Ruta) (float32, error) {
 
 	return tiempo_total, nil
 }
+
+func FastestRoute(rutas []Ruta) (Ruta, error) {
+	if len(rutas) == 0 {
+		return Ruta{}, errors.New("Se debe proporcionar mínimo una ruta.")
+	}
+
+	var fastest_route Ruta
+	var mejor_tiempo float32
+	var tiempo_actual float32
+
+	mejor_tiempo = EstimatedTime(rutas[0])
+	fastest_route = rutas[0]
+	
+
+	for i := 1; i < len(rutas); i++ {
+		tiempo_actual = EstimatedTime(rutas[i])
+
+		if tiempo_actual < tiempo_total{
+			mejor_tiempo = tiempo_actual
+			fastest_route = rutas[i]
+		}
+
+		else if tiempo_actual == tiempo_total {
+			if rutas[i].peaje < fastest_route.peaje{
+				fastest_route = rutas[i]
+			}
+		}
+	}
+
+	return fastest_route, nil
+}
